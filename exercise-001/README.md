@@ -1,5 +1,15 @@
 # Aufgabenstellung
 
+## Git Kommandos
+
+```sh
+git status --> zeigt an ob es Änderungen gibt
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+...
+```
+
 ## Parameterraum
 
 Ändern Sie die Vorlage so ab, dass Sie einen Parameter ``count`` mittels Kommandozeile ``-c,--count`` übergeben können. Falls kein Parameter angegeben wird, so ist der Standardwert mit 20 festzusetzen.
