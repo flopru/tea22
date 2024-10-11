@@ -3,7 +3,9 @@
 
 #include "CLI/CLI.hpp"
 #include "config.h"
-
+/**
+ * Rückgabewert entspricht int und exitcode nach Build Prozess
+ */
 auto main(int argc, char **argv) -> int
 {
     /**
