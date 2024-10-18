@@ -1,7 +1,7 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
-/* .bss Segment für nicht initialisierte Daten*/
+/* .bss Segment für nicht initialisierte Daten oder für Initialisierung mit 0*/
 int foo;                                                // globale Variable ohne static --> mit static ist Variable nur innerhalb des Moduls sichtbar
 static int foo2;
 
