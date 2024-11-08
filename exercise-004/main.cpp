@@ -1,6 +1,10 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
+#include "triangle.h"
+
+#include "triangle.h"
+
 #define MAX_NAME_LENGTH 42
 //const unsigned int MAX_NAME_LENGTH 42
 
@@ -57,6 +61,27 @@ auto main(int argc, char** argv) -> int
     *pPers = paul;
     fmt::print("Die Person auf die der Zeiger zeigt ist {} Jahre alt!\n", pPers->alter);
 
+    Triangle* trig = newTriangle();
+
+    fmt::println("Side a of the triangle trig {}\n", trig->side_a);
+    fmt::println("Side b of the triangle trig {}\n", trig->side_b);
+    fmt::println("Side c of the triangle trig {}\n", trig->side_c);
+
+    // Speicherloch, da der Speicher welcher sich hinter ursprünglichen Pointer auf 'trig' verbirgt überschrieben wird
+    //trig = newTriangle();
+
+    // Vermeidung von Speicherloch über vorherige Freigabe des allokierten Speichers
+    freeTriangle(trig);
+    trig = newTriangle();
+
+    fmt::println("The perimeter is: {}", perimeter(trig));
+
+
+    // selbe Struktur, wobei die Längen der Seiten des Dreiecks vorgegeben werden kann
+    freeTriangle(trig);
+    trig = newTriangleWithValues(42, 34, 56);
+
+    fmt::println("The perimeter is: {}", perimeter(trig));
 
     return 0; /*exit gracefully*/
 }
